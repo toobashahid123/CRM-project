@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %} 
+<br>
+<div class="container my-2 shadow-lg py-4" >
+        <h2 class="text-center alert alert-info">Add new Employee</h2>
+        
+    <form method="post" action="/add_emp">
+        {% csrf_token %}
+        
+          <input type="text" class="form-control" id="Name" name="Name"  value="{{ prod.Name }}" required placeholder="First Name"><br>
+          <input type="text" class="form-control" id="last_name" name="last_name"  value="{{ prod.last_name }}" placeholder="last name" required><br>
+          <input type="text" class="form-control" id="city" name="city"  value="{{ prod.city }}" placeholder="City" required ><br>
+          <input type="text" class="form-control" id="Title" name="Title"  value="{{ prod.Title }}" placeholder="Designated Job" required><br>
+          <input type="text" class="form-control" id="emailid" name="emailid"  value="{{ prod.emailid }}" placeholder="Email id" required><br>
+          <input type="text" class="form-control" id="salary" name="salary"  value="{{ prod.salary }}" placeholder="Salary" required><br>
+ 
+        <button type="submit" href="" class="btn btn-primary">update</button>
+        <a class="btn btn-primary" style="text-align: end;" href="{% url 'index' %}" role="button">back</a>
+      </form>
+    </div>
+
+    {% endblock %}

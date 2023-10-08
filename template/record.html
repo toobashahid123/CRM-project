@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %} 
+
+
+<div class="container my-4 shadow-lg py-4" >
+    <h3 class="text-center alert alert-info">Customer Record</h3>
+
+<div class="card ">
+    <div class="card-header">
+       <strong>{{customer_record.Name}} {{customer_record.last_name}}</strong>
+    </div>
+    <div class="card-body">
+      <p class="card-text">
+        <strong>Name  : </strong>  {{customer_record.Name}}<br/>
+      </p>
+      <p class="card-text">
+        <strong>Last Name : </strong> {{customer_record.last_name}}<br/>
+      </p>
+      <p class="card-text">
+        <strong>ID : </strong> {{customer_record.id}}<br/>
+      </p>
+      <p class="card-text">
+        <strong>City : </strong> {{customer_record.city}}<br/>
+      </p>
+      <p class="card-text">
+        <strong>Title : </strong> {{customer_record.Title}}<br/>
+        <p class="card-text">
+          <strong>Email ID : </strong> {{customer_record.emailid}}<br/>
+        </p>
+        
+        <p class="card-text">
+          <strong>Salary : </strong> {{customer_record.salary}}<br/>
+        </p>
+      </p>
+    </div>
+    </div>
+    <br>
+    <a class="btn btn-primary" href="{% url 'index' %}" role="button">Back</a>
+    <a class="btn btn-danger" href="{% url 'delete_record' customer_record.id %}" role="button">Delete</a>
+  </div>
+
+
+            
+
+
+{% endblock %}
